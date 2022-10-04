@@ -7,4 +7,4 @@ Projeto Django Básico super básico. Um simples hello world em HTML e em HTTPRe
     - Opcional: digitar: pip install django==x.x.x
         - Substituir o x pela versão específica que se deseja instalar.
 
-- Criando o primeiro projeto
+# Criando o primeiro projeto
