@@ -68,9 +68,9 @@ python3 manage.py startapp blog
 
 > Nota: 'blog' pode ser qualquer coisa.
 
-![image](https://user-images.githubusercontent.com/98990221/194149765-37dabfc0-2104-4c33-b586-968a4cd52afd.png)
-
 Será criada uma pasta chamada *blog* na raíz do projeto (nesse caso, em Mod8DjangoBasico). Esse é o nosso primeiro "app".
+
+![image](https://user-images.githubusercontent.com/98990221/194149765-37dabfc0-2104-4c33-b586-968a4cd52afd.png)
 
 ### Arquivos Úteis
 - **apps.py** - configuração do app. Usamos o nome 'BlogConfig', que é o nome da Classe, lá na settings.py em 'projeto'.
@@ -105,30 +105,13 @@ INSTALLED_APPS = [
 
 ## Sync após a criação de um app - urls.py
 
-Agora a parte mais chata envolve modificar a urls.py na pasta mãe. Primeiro é preciso criar uma **urls.py** vazia na pasta 'blog'. Deixar vazia por hora.
+Agora a parte mais chata envolve modificar a urls.py na pasta mãe. Primeiro é preciso criar uma **urls.py** vazia na pasta 'blog'.
 
 ![image](https://user-images.githubusercontent.com/98990221/194153121-67eccde7-6b7b-446a-a423-d43cdca01432.png)
 
-### projeto/urls.py na pasta mãe (projeto)
+### urls.py na pasta blog
 
-```python
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),  # Isso será acrescentado
-]
-```
-
-* Exemplo abstrato: 
-```python
-path('sicrano/', include('sicrano.urls'))
-```
-
-> Nota: Isso referencia o **urls.py** da **pasta blog**. Mas ainda não tem nada nesse arquvio. Agora vamos preencher esse arquivo.
-
-### projeto/urls.py na pasta blog
+Deixar dessa forma:
 
 ```python
 from django.urls import path
@@ -145,6 +128,26 @@ urlpatterns = [
 path('posts/', view.index)  # Cria uma url nova site.com/blog/posts/.
 ```
 
+### urls.py na pasta mãe (projeto)
+
+Deixar dessa forma:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),  # Isso será acrescentado
+]
+```
+
+* Exemplo abstrato: 
+```python
+path('sicrano/', include('sicrano.urls'))
+```
+
+> Nota: Isso referencia o **urls.py** da **pasta blog**.
 
 ## Primeiro Olá mundo!
 
