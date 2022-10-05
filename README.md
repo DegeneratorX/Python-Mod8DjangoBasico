@@ -4,10 +4,14 @@ Projeto Django Básico super básico. Um simples hello world em HTML e em HTTPRe
 
 ## Instalação
 No terminal, digitar: 
-    ```pip install django```
+    ```
+    pip install django
+    ```
 
 Opcional, digitar:
-```pip install django==x.x.x```
+```
+pip install django==x.x.x
+```
 - Substituir o x pela versão específica que se deseja instalar.
 
 ## Conceitos Básicos
