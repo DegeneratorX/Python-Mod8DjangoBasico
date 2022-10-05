@@ -31,14 +31,17 @@ django-admin startproject projeto .
 * O ponto . se refere a pasta atual que o terminal está localizado. Então essa pasta mestra será criada nesse local.
 > Nota: O **projeto** pode ter qualquer nome. Desde que não seja abstrato por convenção. Aqui é usado um exemplo abstrato 'projeto'.
 
-### Arquivos gerados dentro da pasta
+![image](https://user-images.githubusercontent.com/98990221/194149374-385b0277-e4d0-4970-b4de-07bbcc0ccaef.png)
+
+### Arquivos gerados dentro da pasta 'projeto'
 
 - **init.py** diz para o interpretador que ali não é uma pasta qualquer, e sim um pacote.
 - **settings.py** é importantíssimo. Irei colocar todos os apps instalados em INSTALLED APPS.
 - **urls.py** é outro importante. Assim como settings, esse arquivo referencia os apps e linka isso com formato url.
 - **wsgi.py** (web server gateway interface) é relacionado ao servidor web. Faz o trabalho de hospedar em um server para o site ser visualizado por todos. O projeto por hora será local, portanto isso nem será mexido.
 
-Fora da pasta 'projeto', é criado um arquivo chamado **manage.py**. Esse arquivo também é extremamente importante e não deve ser tocado por hora.
+### Arquivo gerado fora da pasta 'projeto'
+- **manage.py** é extremamente importante e não deve ser tocado por hora.
 
 ## Iniciando um servidor super básico
 
@@ -65,6 +68,8 @@ python3 manage.py startapp blog
 
 > Nota: 'blog' pode ser qualquer coisa.
 
+![image](https://user-images.githubusercontent.com/98990221/194149765-37dabfc0-2104-4c33-b586-968a4cd52afd.png)
+
 Será criada uma pasta chamada *blog* na raíz do projeto (nesse caso, em Mod8DjangoBasico). Esse é o nosso primeiro "app".
 
 ### Arquivos Úteis
@@ -79,9 +84,9 @@ Será criada uma pasta chamada *blog* na raíz do projeto (nesse caso, em Mod8Dj
 
 ## Sync após a criação de um app - settings.py
 
-Criar um app também requer que mudanças sejam feitas em outros arquivos de forma a registrar essa nova criação. No caso será registrado em DOIS locais importantes: settings.py e urls.py, ambos na pasta 'projeto' desse rep.
+Criar um app também requer que mudanças sejam feitas em outros arquivos de forma a registrar essa nova criação. No caso será registrado em DOIS locais importantes: **settings.py** e **urls.py**, ambos na pasta 'projeto' desse rep.
 
-* Em settings.py, acrescentar no array **INSTALLED APPS**
+* Em *projeto/settings.py*, acrescentar no array **INSTALLED APPS**
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -95,14 +100,16 @@ INSTALLED_APPS = [
 ```
 * Exemplo abstrato: 
 ```python
-'fulano.apps.FulanoConfig'
+'fulano.apps.FulanoConfig'  # FulanoConfig é uma classe gerada automaticamente localizada em blog/apps.py
 ```
 
 ## Sync após a criação de um app - urls.py
 
 Agora a parte mais chata envolve modificar a urls.py na pasta mãe. Primeiro é preciso criar uma **urls.py** vazia na pasta 'blog'. Deixar vazia por hora.
 
-### urls.py na pasta mãe (projeto)
+![image](https://user-images.githubusercontent.com/98990221/194153121-67eccde7-6b7b-446a-a423-d43cdca01432.png)
+
+### projeto/urls.py na pasta mãe (projeto)
 
 ```python
 from django.contrib import admin
@@ -121,7 +128,7 @@ path('sicrano/', include('sicrano.urls'))
 
 > Nota: Isso referencia o **urls.py** da **pasta blog**. Mas ainda não tem nada nesse arquvio. Agora vamos preencher esse arquivo.
 
-### urls.py na pasta blog
+### projeto/urls.py na pasta blog
 
 ```python
 from django.urls import path
@@ -130,12 +137,12 @@ from . import views  # Importa o arquivo views.py da própria pasta (.) que o ur
 # Crio uma list urlpatterns = [] igual a do arquivo na pasta mãe.
 urlpatterns = [
     path('', views.index)  # Não executo o método com (), só referencio
-    # Está em '' pois referencia ao próprio url /blog/.
+    # Está em '' pois referencia ao próprio url site.com/blog/.
 ]
 ```
 * Exemplo abstrato:
 ```python
-path('posts/', view.index)  # Referencia /blog/posts.
+path('posts/', view.index)  # Cria uma url nova site.com/blog/posts/.
 ```
 
 
