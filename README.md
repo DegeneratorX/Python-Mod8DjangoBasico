@@ -8,7 +8,7 @@ No terminal, digitar:
 
 Opcional, digitar:
 ```pip install django==x.x.x```
-    - Substituir o x pela versão específica que se deseja instalar.
+- Substituir o x pela versão específica que se deseja instalar.
 
 ## Conceitos Básicos
 
