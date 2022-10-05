@@ -2,18 +2,21 @@
 Curso do Luiz Otávio Miranda de Django.
 Projeto Django Básico super básico. Um simples hello world em HTML e em HTTPResponse.
 
-- Instalação
-    - No terminal, digitar: 'pip install django' sem aspas.
-    - Opcional: digitar: 'pip install django==x.x.x'
-        - Substituir o x pela versão específica que se deseja instalar.
+## Instalação
+No terminal, digitar: 
+    ```pip install django```
 
-# Conceitos Básicos
+Opcional, digitar:
+```pip install django==x.x.x```
+    - Substituir o x pela versão específica que se deseja instalar.
+
+## Conceitos Básicos
 
 - Apps
     - São as páginas. Exemplo: site.com/index. site.com/about. site.com/carrinho. São 3 diferentes apps de um mesmo site. É similar as 'activities' dos aplicativos Android.
 - !TODO
 
-# Iniciando, base pra tudo
+## Iniciando, base pra tudo
 
 Pra criar o primeiro projeto, é preciso, ao invés de criar pastas, usar comandos no terminal. A criação da pasta mãe é essencial.
 
