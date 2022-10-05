@@ -104,4 +104,4 @@ Ao abrir o site e atualizar, ir na seção /blog/ do site irá aparecer 'Olá mu
         - Esse método 'render' é o que projeta o arquivo HTML em nossa página
         - Dentro do método index(), escrever 'return render(request, 'blog/index.html')
 
-- No arquivo 'index.html', escrever '<h1>Olá Mundo!</h1>'. Atualizar a página. Agora temos Olá mundo em html nativo.
+- No arquivo 'index.html', escrever 'Olá Mundo!' em linguagem html. Atualizar a página. Agora temos Olá mundo em html nativo.
