@@ -51,13 +51,15 @@ Criar um app requer também o uso do terminal.
     - models.py trabalha com a base de dados, e está diretamente relacionado com migrations. Não será abordado nesse rep.
     - tests.py envolve testes automatizados.
 
-# Sync após a criação de um app
+# Sync após a criação de um app - settings.py
 
 Criar um app também requer que mudanças sejam feitas em outros arquivos de forma a registrar essa nova criação. No caso será registrado em DOIS locais importantes: settings.py e urls.py, ambos na pasta 'projeto' desse rep.
 
 - Em settings.py, acrescentar no array 'INSTALLED APPS'
     - 'blog.apps.BlogConfig'
     - Exemplo abstrato: 'fulano.apps.FulanoConfig'
+
+# Sync após a criação de um app - urls.py
 
 Agora a parte mais chata envolve modificar a urls.py na pasta mãe. Primeiro é preciso criar uma urls.py vazia na pasta 'blog'. Deixar vazia por hora.
 
@@ -76,4 +78,30 @@ Isso referencia o urls.py da pasta 'blog'. Mas lá ainda não tem nada. Agora va
 - Criar uma list urlpatterns = [] igual a do arquivo na pasta mãe.
 - Acrescentar na list 'urlpatterns'
     - path('', views.index)
-    
+        - Referencia ao próprio /blog/
+    - path('posts/', view.index)
+        - Referencia /blog/posts
+
+# Primeiro Olá mundo!
+
+- Esse 'index' em urls.py faz referência ao método index() NÃO EXECUTADO (pois não tem parênteses) no arquivo views.py. O arquivo views.py está vazio. No caso é pra por o método 'def index(request): pass' por hora nele
+
+- Além disso, no mesmo arquivo, escrever:
+    - from django.http import HttpResponse
+        - Esse método 'HttpResponse' é um print básico em web.
+        - Dentro do método index(), escrever 'return HttpResponse('Olá mundo!')
+
+Ao abrir o site e atualizar, ir na seção /blog/ do site irá aparecer 'Olá mundo!'.
+
+# Para trabalhar com HTML:
+
+- Criar uma pasta 'templates' dentro do app desejado. Dentro da pasta 'templates', criar uma pasta com o mesmo nome da pasta do app. No caso 'blog'.
+
+- Dentro da pasta /blog/templates/blog/, criar um html simples chamado 'index.html.
+
+- No mesmo arquivo views.py:
+    - from django.shortcuts import render
+        - Esse método 'render' é o que projeta o arquivo HTML em nossa página
+        - Dentro do método index(), escrever 'return render(request, 'blog/index.html')
+
+- No arquivo 'index.html', escrever '<h1>Olá Mundo!</h1>'. Atualizar a página. Agora temos Olá mundo em html nativo.
