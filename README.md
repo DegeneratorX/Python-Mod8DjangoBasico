@@ -17,7 +17,7 @@ Projeto Django Básico super básico. Um simples hello world em HTML e em HTTPRe
 
 Pra criar o primeiro projeto, é preciso, ao invés de criar pastas, usar comandos no terminal. A criação da pasta mãe é essencial.
 
-- django-admin startproject projeto .
+- ```django-admin startproject projeto .```
     - O ponto . se refere a pasta atual que o terminal está localizado. Então essa pasta mestra será criada nesse local.
     - O 'projeto' pode ter qualquer nome. Desde que não seja abstrato por convenção. Aqui é usado um exemplo abstrato 'projeto'.
 - init.py diz para o interpretador que ali não é uma pasta qualquer, e sim um pacote.
