@@ -2,6 +2,8 @@
 Curso do Luiz Otávio Miranda de Django.
 Projeto Django Básico super básico. Um simples hello world em HTML e em HTTPResponse.
 
+# PARTE 1 - OLÁ MUNDO
+
 ## Instalação
 No terminal, digitar: 
 ```bash
@@ -189,3 +191,9 @@ def index(request):
 ```
 
 * No arquivo **index.html**, escrever **Olá Mundo!** em linguagem html. Atualizar a página. Agora temos Olá mundo em html nativo.
+
+# PARTE 2 - HERANÇA DE HTML
+
+Normalmente o site tem sub-páginas html que herdam características da página principal. Ao invés de criar vários index.html pra várias páginas (apps) em html no Copia-Cola, vamos usar um arquivo **base.html** que serve de herança para outros index.html em **subpáginas**.
+
+##
